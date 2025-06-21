@@ -1,12 +1,80 @@
-# React + Vite
+# 🛍️ Item Management Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a full-stack web application for managing items (e.g., shirts, pants, shoes, sports gear, etc.). It allows users to add new items, view them in a gallery, and explore detailed information in a modal dialog with an image carousel.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Features
 
-## Expanding the ESLint configuration
+### 🔹 Frontend (React + ShadCN + Tailwind)
+- Add new item with:
+  - Item name
+  - Type (Shirt, Pant, Shoes, Sports Gear, Other)
+  - Description
+  - Cover image
+  - Additional images
+- View all items in a responsive gallery
+- Click any item to open a modal with:
+  - Full details
+  - Image carousel (ShadCN Carousel)
+  - “Enquire” button
+- Clean and responsive UI using Tailwind CSS
+- Controlled routing using React Router
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🔹 Backend (Node.js + Express + MongoDB)
+- REST API to:
+  - Add new item
+  - Get all items
+  - Get item by ID
+  - Delete item
+- Stores items in MongoDB with schema validation
+- Handles large image payloads (base64-encoded)
+- `.env` file for environment variables
+
+---
+
+## 📁 Project Structure
+
+root/
+├── backend/
+│ ├── controller/
+│ │ └── itemController.js
+│ ├── model/
+│ │ └── itemModel.js
+│ ├── routes/
+│ │ └── itemRoute.js
+│ ├── .env
+│ ├── index.js
+│ └── package.json
+├── frontend/
+│ ├── src/
+│ │ ├── components/
+│ │ │ ├── AddItem.jsx
+│ │ │ ├── ViewItems.jsx
+│ │ │ └── ImageCarousel.jsx
+│ │ └── App.jsx
+│ ├── public/
+│ ├── .env
+│ └── package.json
+└── README.md
+
+
+---
+
+## 🚀 Getting Started
+
+### 🔧 Prerequisites
+
+- Node.js (v18+ recommended)
+- MongoDB (local or Atlas)
+- npm or yarn
+
+---
+
+### 🛠️ Backend Setup
+
+```bash
+cd backend
+npm install
+
+node index.js
